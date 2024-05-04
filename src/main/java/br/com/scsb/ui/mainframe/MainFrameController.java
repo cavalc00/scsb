@@ -34,7 +34,6 @@ public class MainFrameController extends CommonFrameController {
         encryptFrameController.prepareAndOpenFrame();
     }
 
-
     private void showMainFrame() {
         mainFrame.setVisible(true);
     }
