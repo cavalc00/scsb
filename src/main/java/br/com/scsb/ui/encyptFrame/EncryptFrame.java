@@ -20,13 +20,19 @@ import java.util.Arrays;
 @Component
 public class EncryptFrame extends CommonFrame {
 
+    private JPanel panelData;
+    private JLabel tfDataLabel;
+    private JTextField dataField;
+
     private JPanel panelAlgorithm;
     private JLabel cbAlgorithmLabel;
     private DefaultComboBox<String> algorithmComboBox;
+
     private JPanel panelSecretKey;
     private JLabel tfSecretKeyLabel;
     private JTextField secretKeyField;
     private JButton btnGenerateSecretKey;
+
     private JButton btnCrypt;
     private JTextArea taCrypt;
 
@@ -38,7 +44,7 @@ public class EncryptFrame extends CommonFrame {
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.setLayout(new GridLayout(4, 1, 20, 20));
+        this.setLayout(new GridLayout(5, 1, 20, 20));
 
         this.initComponents();
         this.pack();
@@ -55,6 +61,10 @@ public class EncryptFrame extends CommonFrame {
     }
 
     private void attachComponents() {
+        panelData = new JPanel(new GridLayout(1, 2, 20, 20));
+        panelData.add(tfDataLabel);
+        panelData.add(dataField);
+
         panelAlgorithm = new JPanel(new GridLayout(1, 2, 10, 20));
         panelAlgorithm.add(cbAlgorithmLabel);
         panelAlgorithm.add(algorithmComboBox);
@@ -64,6 +74,7 @@ public class EncryptFrame extends CommonFrame {
         panelSecretKey.add(secretKeyField);
         panelSecretKey.add(btnGenerateSecretKey);
 
+        this.add(panelData);
         this.add(panelAlgorithm);
         this.add(panelSecretKey);
         this.add(btnCrypt);
@@ -71,6 +82,8 @@ public class EncryptFrame extends CommonFrame {
     }
 
     private void initComponents() {
+        this.prepareTfDataLabel();
+        this.prepareDataField();
         this.prepareCbAlgorithmLabel();
         this.prepareAlgorithmComboBox();
         this.prepareTfSecretKeyLabel();
@@ -80,6 +93,15 @@ public class EncryptFrame extends CommonFrame {
         this.prepareTaCrypt();
 
         this.attachComponents();
+    }
+
+    private void prepareDataField() {
+        dataField = new JTextField();
+        dataField.setEditable(true);
+    }
+
+    private void prepareTfDataLabel() {
+        tfDataLabel = new JLabel(StringConstantsPT.Labels.DATA_USER);
     }
 
     private void prepareTaCrypt() {

@@ -28,7 +28,7 @@ public class MainFrame extends CommonFrame {
     @PostConstruct
     public void setup() {
         this.setTitle(StringConstantsPT.Titles.PROJECT_TITLE);
-        this.setResizable(false);
+        this.setResizable(true);
         this.getRootPane().setBorder(Borders.createEmptyBorder());
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

@@ -12,6 +12,7 @@ public class StringConstantsPT {
         public static final String DECRYPT = "Descriptografar";
         public static final String SECRET_KEY = "Secret-Key";
         public static final String GENERATE_KEY = "Gerar Secret-Key";
+        public static final String DATA_USER = "Dado a ser criptografado";
     }
 
 }

@@ -12,7 +12,7 @@ public class EncryptFrameController extends CommonFrameController {
 
     @Override
     public void prepareAndOpenFrame() {
-        encryptFrame.pack();
+
         encryptFrame.setVisible(true);
     }
 }
