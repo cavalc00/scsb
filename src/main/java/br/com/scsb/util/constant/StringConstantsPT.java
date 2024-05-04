@@ -8,7 +8,8 @@ public class StringConstantsPT {
 
     public static class Labels {
         public static final String CIPHER_BOX_LABEL = "Escolha o algoritmo";
-        public static final String CRYPT = "Encriptar";
+        public static final String ENCRYPT = "Encriptar";
+        public static final String DECRYPT = "Descriptografar";
     }
 
 }

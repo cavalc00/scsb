@@ -1,15 +1,10 @@
 package br.com.scsb.ui.mainframe;
 
-import br.com.scsb.model.enums.CipherEnum;
-import br.com.scsb.ui.common.component.DefaultComboBox;
-import br.com.scsb.ui.common.component.DefaultLabel;
-import br.com.scsb.ui.common.component.DefaultRadioButton;
 import br.com.scsb.ui.common.controller.CommonFrameController;
-import br.com.scsb.util.constant.StringConstantsPT;
+import br.com.scsb.ui.decryptFrame.DecryptFrameController;
+import br.com.scsb.ui.encyptFrame.EncryptFrameController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
-import java.util.Arrays;
 
 @Controller
 public class MainFrameController extends CommonFrameController {
@@ -18,46 +13,27 @@ public class MainFrameController extends CommonFrameController {
     private MainFrame mainFrame;
 
     @Autowired
-    private DefaultComboBox<String> algorithmComboBox;
+    private EncryptFrameController encryptFrameController;
 
     @Autowired
-    private DefaultLabel algorithmCBLabel;
-
-    @Autowired
-    private DefaultRadioButton modeCrypt;
+    private DecryptFrameController decryptFrameController;
 
     @Override
     public void prepareAndOpenFrame() {
-        this.prepareAlgorithmCBLabel();
-        this.prepareAlgorithmComboBox();
-        this.prepareRadioButtonCrypt();
+        this.registerAction(mainFrame.getEncryptButton(), (e) -> this.openEncryptFrame());
+        this.registerAction(mainFrame.getDecryptButton(), (e) -> this.openDecryptFrame());
 
         this.showMainFrame();
     }
 
-    private void prepareRadioButtonCrypt() {
-        modeCrypt.setText(StringConstantsPT.Labels.CRYPT);
-        modeCrypt.setBounds(400, 10, 100, 30);
-
-        mainFrame.add(modeCrypt);
+    private void openDecryptFrame() {
+        decryptFrameController.prepareAndOpenFrame();
     }
 
-    private void prepareAlgorithmCBLabel() {
-        algorithmCBLabel.setup();
-        algorithmCBLabel.setLabelFor(algorithmCBLabel);
-        algorithmCBLabel.setText(StringConstantsPT.Labels.CIPHER_BOX_LABEL);
-        algorithmCBLabel.setBounds(10, 10, 130, 20);
-
-        mainFrame.add(algorithmCBLabel);
+    private void openEncryptFrame() {
+        encryptFrameController.prepareAndOpenFrame();
     }
 
-    private void prepareAlgorithmComboBox() {
-        algorithmComboBox.setup();
-        algorithmComboBox.addElements(Arrays.stream(CipherEnum.values()).toList().stream().map(CipherEnum::getCipher).toList());
-        algorithmComboBox.setBounds(130, 10, 220, 20);
-
-        mainFrame.add(algorithmComboBox);
-    }
 
     private void showMainFrame() {
         mainFrame.setVisible(true);
