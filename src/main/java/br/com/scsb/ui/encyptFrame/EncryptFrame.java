@@ -50,6 +50,54 @@ public class EncryptFrame extends CommonFrame {
         this.pack();
     }
 
+    public JPanel getPanelData() {
+        return panelData;
+    }
+
+    public JLabel getTfDataLabel() {
+        return tfDataLabel;
+    }
+
+    public JTextField getDataField() {
+        return dataField;
+    }
+
+    public JPanel getPanelAlgorithm() {
+        return panelAlgorithm;
+    }
+
+    public JLabel getCbAlgorithmLabel() {
+        return cbAlgorithmLabel;
+    }
+
+    public DefaultComboBox<String> getAlgorithmComboBox() {
+        return algorithmComboBox;
+    }
+
+    public JPanel getPanelSecretKey() {
+        return panelSecretKey;
+    }
+
+    public JLabel getTfSecretKeyLabel() {
+        return tfSecretKeyLabel;
+    }
+
+    public JTextField getSecretKeyField() {
+        return secretKeyField;
+    }
+
+    public JButton getBtnGenerateSecretKey() {
+        return btnGenerateSecretKey;
+    }
+
+    public JButton getBtnCrypt() {
+        return btnCrypt;
+    }
+
+    public JTextArea getTaCrypt() {
+        return taCrypt;
+    }
+
     private void prepareCbAlgorithmLabel() {
         cbAlgorithmLabel = new JLabel(StringConstantsPT.Labels.CIPHER_BOX_LABEL);
     }

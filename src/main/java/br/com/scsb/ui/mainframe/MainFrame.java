@@ -16,14 +16,6 @@ public class MainFrame extends CommonFrame {
     private JButton encryptButton;
     private JButton decryptButton;
 
-    public JButton getEncryptButton() {
-        return encryptButton;
-    }
-
-    public JButton getDecryptButton() {
-        return decryptButton;
-    }
-
     @Override
     @PostConstruct
     public void setup() {
@@ -37,6 +29,14 @@ public class MainFrame extends CommonFrame {
 
         this.initComponents();
         this.pack();
+    }
+
+    public JButton getEncryptButton() {
+        return encryptButton;
+    }
+
+    public JButton getDecryptButton() {
+        return decryptButton;
     }
 
     private void prepareEncryptButton() {
