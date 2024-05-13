@@ -13,7 +13,8 @@ public class StringConstantsPT {
         public static final String DECRYPT = "Descriptografar";
         public static final String SECRET_KEY = "Secret-Key";
         public static final String GENERATE_KEY = "Gerar Secret-Key";
-        public static final String DATA_USER = "Dado a ser criptografado";
+        public static final String ENCRYPT_DATA_USER = "Dado a ser criptografado";
+        public static final String DECRYPT_DATA_USER = "Dado a ser descriptografado";
         public static final String EMPTY_SECRET_MESSAGE = "Secret-Key não pode ser vazia.";
         public static final String EMPTY_DATA_MESSAGE = "Dado a ser utilizado não pode ser vazio.";
     }
