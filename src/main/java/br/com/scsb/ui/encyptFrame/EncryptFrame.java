@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
@@ -35,6 +36,7 @@ public class EncryptFrame extends CommonFrame {
 
     private JButton btnCrypt;
     private JTextArea taCrypt;
+    private JScrollPane taScroll;
 
     @Override
     @PostConstruct
@@ -48,6 +50,30 @@ public class EncryptFrame extends CommonFrame {
 
         this.initComponents();
         this.pack();
+    }
+
+    public JTextField getDataField() {
+        return dataField;
+    }
+
+    public DefaultComboBox<String> getAlgorithmComboBox() {
+        return algorithmComboBox;
+    }
+
+    public JTextField getSecretKeyField() {
+        return secretKeyField;
+    }
+
+    public JButton getBtnGenerateSecretKey() {
+        return btnGenerateSecretKey;
+    }
+
+    public JButton getBtnCrypt() {
+        return btnCrypt;
+    }
+
+    public JTextArea getTaCrypt() {
+        return taCrypt;
     }
 
     private void prepareCbAlgorithmLabel() {
@@ -78,7 +104,7 @@ public class EncryptFrame extends CommonFrame {
         this.add(panelAlgorithm);
         this.add(panelSecretKey);
         this.add(btnCrypt);
-        this.add(taCrypt);
+        this.add(taScroll);
     }
 
     private void initComponents() {
@@ -106,6 +132,8 @@ public class EncryptFrame extends CommonFrame {
 
     private void prepareTaCrypt() {
         taCrypt = new JTextArea();
+        taScroll = new JScrollPane(taCrypt);
+        taCrypt.setLineWrap(true);
         taCrypt.setEditable(false);
     }
 
