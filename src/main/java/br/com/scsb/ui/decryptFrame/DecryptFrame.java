@@ -8,8 +8,11 @@ import br.com.scsb.util.constant.StringConstantsPT;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import java.awt.GridLayout;
@@ -29,6 +32,10 @@ public class DecryptFrame extends CommonFrame {
     private JPanel panelSecretKey;
     private JLabel tfSecretKeyLabel;
     private JTextField secretKeyField;
+
+    private JButton btnDecrypt;
+    private JTextArea taDecrypt;
+    private JScrollPane taScroll;
 
     @Override
     @PostConstruct
@@ -79,8 +86,21 @@ public class DecryptFrame extends CommonFrame {
         this.prepareAlgorithmComboBox();
         this.prepareTfSecretKeyLabel();
         this.prepareSecretKeyField();
+        this.prepareBtnDecrypt();
+        this.prepareTaDecrypt();
 
         this.attachComponents();
+    }
+
+    private void prepareTaDecrypt() {
+        taDecrypt = new JTextArea();
+        taScroll = new JScrollPane(taDecrypt);
+        taDecrypt.setLineWrap(true);
+        taDecrypt.setEditable(false);
+    }
+
+    private void prepareBtnDecrypt() {
+        btnDecrypt = new JButton(StringConstantsPT.Labels.DECRYPT);
     }
 
     private void attachComponents() {
@@ -99,5 +119,7 @@ public class DecryptFrame extends CommonFrame {
         this.add(panelData);
         this.add(panelAlgorithm);
         this.add(panelSecretKey);
+        this.add(btnDecrypt);
+        this.add(taScroll);
     }
 }
