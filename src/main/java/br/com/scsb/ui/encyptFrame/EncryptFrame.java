@@ -127,7 +127,7 @@ public class EncryptFrame extends CommonFrame {
     }
 
     private void prepareTfDataLabel() {
-        tfDataLabel = new JLabel(StringConstantsPT.Labels.DATA_USER);
+        tfDataLabel = new JLabel(StringConstantsPT.Labels.ENCRYPT_DATA_USER);
     }
 
     private void prepareTaCrypt() {
