@@ -51,6 +51,26 @@ public class DecryptFrame extends CommonFrame {
         this.pack();
     }
 
+    public JTextField getDataField() {
+        return dataField;
+    }
+
+    public JTextField getSecretKeyField() {
+        return secretKeyField;
+    }
+
+    public JButton getBtnDecrypt() {
+        return btnDecrypt;
+    }
+
+    public JTextArea getTaDecrypt() {
+        return taDecrypt;
+    }
+
+    public DefaultComboBox<String> getAlgorithmComboBox() {
+        return algorithmComboBox;
+    }
+
     private void prepareDataField() {
         dataField = new JTextField();
         dataField.setEditable(true);
@@ -96,7 +116,7 @@ public class DecryptFrame extends CommonFrame {
         taDecrypt = new JTextArea();
         taScroll = new JScrollPane(taDecrypt);
         taDecrypt.setLineWrap(true);
-        taDecrypt.setEditable(false);
+        taDecrypt.setEditable(true);
     }
 
     private void prepareBtnDecrypt() {
