@@ -1,4 +1,4 @@
-package br.com.scsb.util.rules;
+package br.com.scsb.util.rule;
 
 import javax.crypto.Cipher;
 import javax.crypto.NoSuchPaddingException;
